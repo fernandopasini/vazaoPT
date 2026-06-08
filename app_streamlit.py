@@ -85,10 +85,10 @@ def fig_resultados(df_res: pd.DataFrame):
     return fig
 
 
-st.title("Previsao de vazao com Random Forest")
+st.title("Previsão de vazão com Random Forest")
 st.caption(
-    "O modelo usa a relacao chuva-vazao aprendida na serie historica e aplica essa relacao "
-    "as condicoes atuais: chuva recente, vazao atual e chuva futura prevista."
+    "O modelo usa a relacao chuva-vazao aprendida na série histórica e aplica essa relação "
+    "às condições atuais: chuva recente, vazão atual e chuva futura prevista."
 )
 
 with st.sidebar:
@@ -125,18 +125,18 @@ with col1:
 with col2:
     data_ref = st.date_input("Data atual / data de referencia", value=date.today())
 with col3:
-    q_atual = st.number_input("Vazao atual observada Q(t-1) [m³/s]", min_value=0.0, value=10.0, step=0.1)
+    q_atual = st.number_input("Vazão atual observada [m³/s]", min_value=0.0, value=10.0, step=0.1)
 
 meta_site = bundle["meta"]["sites"][site]
 st.info(
     f"Serie selecionada: **{site}** | Chuva usada no treinamento: `{meta_site['p_col']}` | "
     f"Vazao usada no treinamento: `{meta_site['q_col']}` | "
-    f"Periodo treinado: {meta_site.get('period_start', '?')} a {meta_site.get('period_end', '?')}"
+    f"Periodo treinado: {meta_site.get('period_start', '01/08/1967')} a {meta_site.get('period_end', '30/09/2022')}"
 )
 
 st.subheader("1) Chuva recente observada")
 st.write(
-    "Informe pelo menos 30 dias de precipitacao recente. "
+    "Informe pelo menos 30 dias de precipitação recente. "
     "Esses valores sao usados para calcular os acumulados de 3, 5, 7, 14 e 30 dias."
 )
 
