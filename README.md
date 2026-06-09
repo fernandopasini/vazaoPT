@@ -1,4 +1,4 @@
-# Aplicativo Streamlit - Previsao de Vazao com Random Forest
+# Aplicativo Streamlit - Previsão de Vazão utilizando Random Forest
 
 Este projeto aplica um modelo Random Forest chuva-vazao com memoria hidrologica `Q(t-1)`.
 
